@@ -1,0 +1,4 @@
+.card-img-top {
+    height: 200px; /* You can adjust this value to whatever height you prefer */
+    object-fit: cover; /* This ensures the image covers the entire space allocated */
+  }

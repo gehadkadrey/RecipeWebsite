@@ -1,0 +1,8 @@
+
+<div class="card m-2" (click)="onSelectRecipe(element)" >
+    <img [src]="element.imagePath" class="card-img-top" alt="Recipe Image">
+    <div class="card-body">
+      <h5 class="card-title">{{element.title}}</h5>
+      <p class="card-text">{{element.description}}</p>
+    </div>
+  </div>

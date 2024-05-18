@@ -1,0 +1,3 @@
+<app-header (diaplayComponent)="componentDisplay=$event"></app-header>
+<app-recipes *ngIf="componentDisplay=='Recipes'"></app-recipes>
+<app-shopping-list *ngIf="componentDisplay=='Shopping-List'"></app-shopping-list>

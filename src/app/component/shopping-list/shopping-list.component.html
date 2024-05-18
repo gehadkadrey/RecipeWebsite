@@ -1,0 +1,14 @@
+
+<app-shopping-edit (newIngradient)="AddNewIngradient($event)"></app-shopping-edit>
+
+
+<div class="container mt-4">
+    <h2>Shopping List</h2>
+    <ul class="list-group mb-3">
+      <li *ngFor="let item of ingradientList" class="list-group-item">
+        {{ item.name }} - ({{ item.amount }})
+        <br>
+        <!-- <app-shopping-edit ></app-shopping-edit> -->
+      </li>
+    </ul>
+    </div>
