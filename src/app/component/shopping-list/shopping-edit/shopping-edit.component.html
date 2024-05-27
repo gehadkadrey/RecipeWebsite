@@ -1,14 +1,14 @@
-<div class=" m-5">
-  <div class="form-group ">
-    <label for="name">Name</label>
-    <input id="name" type="text" class="form-control" #name>
-  </div>
-  <div class="form-group mb-3 ">
-    <label for="amount">Amount</label>
-    <input id="amount" type="number" class="form-control" #amount >
-  </div>
+<div class="last-page-container">
+  <div class="m-5 form-container">
+    <div class="form-group">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" type="text" class="form-control" #name>
+    </div>
+    <div class="form-group mb-3">
+      <label for="amount" class="form-label">Amount</label>
+      <input id="amount" type="number" class="form-control" #amount>
+    </div>
 
-  <button class="btn btn-success m-2" (click)="addItem()">Add</button>
-  <button class="btn btn-danger m-2" (click)="deleteItem()">Delete</button>
-  <button class="btn btn-primary m-2" (click)="clearList()">Clear</button>
+    <button class="btn btn-success m-2 add-btn" (click)="addItem()">Add</button>
+  </div>
 </div>

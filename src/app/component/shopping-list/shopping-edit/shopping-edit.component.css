@@ -1,0 +1,34 @@
+/* Custom styles for the form container */
+.form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom styles for form labels */
+.form-label {
+  font-weight: bold;
+}
+
+/* Custom styles for form controls */
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 8px;
+  width: 100%;
+}
+
+/* Custom styles for the add button */
+.add-btn {
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}

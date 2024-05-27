@@ -1,3 +1,4 @@
+import { ingradient } from "./ingradient";
 
 
 export class RecipeModel{
@@ -5,9 +6,11 @@ export class RecipeModel{
 title!:string;
 description!:string;
  imagePath!:string;
- constructor(title:string,description:string, imagePath:string){
+ ingradient?:ingradient[]=[];
+ constructor(title:string,description:string, imagePath:string,ingradient:ingradient[]){
     this.title=title;
     this.description=description;
-    this.imagePath=imagePath
+    this.imagePath=imagePath;
+    this.ingradient=ingradient;
  }
 }

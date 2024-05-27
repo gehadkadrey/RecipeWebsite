@@ -2,3 +2,72 @@
     height: 200px; /* You can adjust this value to whatever height you prefer */
     object-fit: cover; /* This ensures the image covers the entire space allocated */
   }
+  .card-text {
+    font-family: Arial, sans-serif; /* Example font */
+    font-size: 16px;               /* Example font size */
+    color: #333;                   /* Example text color */
+  }
+  
+  .ingredient-name {
+    margin-right: 10px;            /* Space between the name and amount */
+    font-weight: bold;             /* Example design style */
+  }
+  
+  .ingredient-amount {
+    font-style: italic;            /* Example design style */
+  }
+
+  /* Custom styles for the recipe card */
+.recipe-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card .card-body {
+  padding: 15px;
+}
+
+.recipe-card .card-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.recipe-card .card-text {
+  font-size: 1em;
+  color: #555;
+}
+
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.ingredient-name {
+  font-weight: bold;
+  color: #333;
+  margin-right: 10px;
+}
+
+.ingredient-amount {
+  font-style: italic;
+  color: #666;
+}
+
+/* Optional: styles for the ingredient section */
+.recipe-card hr {
+  margin: 15px 0;
+}
+
+.ingredient-item:last-child {
+  margin-bottom: 0;
+}

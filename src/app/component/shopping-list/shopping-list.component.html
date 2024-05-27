@@ -3,12 +3,10 @@
 
 
 <div class="container mt-4">
-    <h2>Shopping List</h2>
-    <ul class="list-group mb-3">
-      <li *ngFor="let item of ingradientList" class="list-group-item">
-        {{ item.name }} - ({{ item.amount }})
-        <br>
-        <!-- <app-shopping-edit ></app-shopping-edit> -->
-      </li>
-    </ul>
-    </div>
+  <h2 class="shopping-list-title">Shopping List</h2>
+  <ul class="list-group mb-3 shopping-list">
+    <li *ngFor="let item of ingradientList" class="list-group-item shopping-list-item">
+      <span class="ingredient-name">{{ item.name }}</span> - <span class="ingredient-amount">{{ item.amount }}</span>
+    </li>
+  </ul>
+</div>

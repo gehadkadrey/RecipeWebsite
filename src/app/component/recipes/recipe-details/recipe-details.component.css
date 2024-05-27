@@ -1,0 +1,45 @@
+/* Custom styles for the recipe card */
+.recipe-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Custom styles for the ingredient item */
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* Custom styles for ingredient name */
+.ingredient-name {
+  font-weight: bold;
+}
+
+/* Custom styles for ingredient amount */
+.ingredient-amount {
+  font-style: italic;
+  color: #6c757d; /* Set a darker color for the ingredient amount */
+}
+
+/* Custom styles for the add ingredient button */
+.add-ingredient-btn {
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-ingredient-btn:hover {
+  background-color: #218838;
+}
+

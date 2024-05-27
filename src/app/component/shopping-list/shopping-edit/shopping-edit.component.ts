@@ -16,6 +16,5 @@ export class ShoppingEditComponent {
 this.newIngradient.emit(ingrad);
     
   }
-  deleteItem(){}
-  clearList(){}
+
 }

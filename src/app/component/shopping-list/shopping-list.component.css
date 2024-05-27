@@ -1,0 +1,40 @@
+/* Custom styles for the shopping list container */
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Custom styles for the shopping list title */
+  .shopping-list-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Custom styles for the shopping list */
+  .shopping-list {
+    list-style: none;
+  }
+  
+  /* Custom styles for shopping list items */
+  .shopping-list-item {
+    padding: 10px 15px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Custom styles for ingredient name */
+  .ingredient-name {
+    font-weight: bold;
+  }
+  
+  /* Custom styles for ingredient amount */
+  .ingredient-amount {
+    font-style: italic;
+  }
+  
