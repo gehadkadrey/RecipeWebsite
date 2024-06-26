@@ -1,15 +1,32 @@
-
-<div class="card m-2 recipe-card" (click)="onSelectRecipe(element)">
-  <img [src]="element.imagePath" class="card-img-top" alt="Recipe Image">
-  <div class="card-body">
-    <h5 class="card-title">{{element.title}}</h5>
-    <p class="card-text">{{element.description}}</p>
-    <div *ngIf="element.ingradient?.length !== 0">
-      <hr>
-      <div *ngFor="let ingrad of element.ingradient" class="ingredient-item">
-        <span class="card-text ingredient-name">{{ingrad.name}}</span>
-        <span class="card-text ingredient-amount">{{ingrad.amount}}</span>
+<div class="main">
+  <ul class="cards" >
+    <li class="cards_item">
+      <div class="card" >
+        <div class="card_image"><img [src]="element.imagePath" ></div>
+        <div class="card_content">
+          <h2 class="card_title">Title: {{element.title}}</h2>
+          <div class="card_text">
+            <p> <b>Description :</b> {{element.description}}</p>
+            
+            <div class="card m-2 col-12" *ngIf="element.ingradient?.length !== 0">
+              <div class="card-body">
+                  <h4 class="card-text" > ingredient</h4>
+                  <div *ngFor="let ingrad of element.ingradient" class="ingredient-item" >
+                      <span class="card-text ingredient-name">{{ingrad.name}}</span>
+                      <span class="card-text ingredient-amount">{{ingrad.amount}}</span>
+                  </div>
+              </div>
+          </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </li>
+
+    
+   
+  </ul>
 </div>
+
+
+
+

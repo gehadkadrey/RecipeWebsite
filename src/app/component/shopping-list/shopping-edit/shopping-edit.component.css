@@ -32,3 +32,8 @@
 .add-btn:hover {
   background-color: #218838;
 }
+
+.is-invalid {
+  border-color: #e74c3c;
+  box-shadow: none;
+}

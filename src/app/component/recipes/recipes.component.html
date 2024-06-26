@@ -1,13 +1,20 @@
 <div class="container mt-4 recipe-container">
   <!-- <button class="btn btn-primary mb-4 new-recipe-btn">New Recipe</button> -->
-  
+  <div class="col-md-2">
+    <a  class="btn btn-success"  (click)="onAdd()">Add Recipe</a>
+    </div>
+    
   <div class="row">
-    <div class="col-md-8 mb-4">
-      <app-recipe-list (selectOne)="selectElement = $event"></app-recipe-list>
+    <div class="col-md-6 mb-4">
+      <app-recipe-list></app-recipe-list>
     </div>
 
-    <div class="col-md-4 mt-4" *ngIf="selectElement">
+    <!-- <div class="col-md-6 mt-5" *ngIf="selectElement">
       <app-recipe-details [element]="selectElement"></app-recipe-details>
+    </div> -->
+    <div class="col-md-6 mt-5">
+      <router-outlet></router-outlet>
     </div>
+    
   </div>
 </div>

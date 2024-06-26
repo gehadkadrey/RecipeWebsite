@@ -1,0 +1,84 @@
+<div class="card  recipe-card">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <!-- <div class="card-img-top-container"> -->
+      <img *ngIf="imagePreview" class="card-img-top" [src]="imagePreview" alt="Recipe Image">
+      <!-- <img *ngIf="!imagePreview" class="card-img-top" src="default-image-path.jpg" alt="Default Image"> -->
+    <!-- </div> -->
+    <div class="form-group m-2">
+      <label for="imagePath"> <b>Upload Image</b></label>
+      <input type="file" class="form-control" (change)="onImageChange($event)">
+    </div>
+
+    <div class="card-body">
+      <div class="form-group">
+        <label for="title"><b>Title</b></label>
+        <input id="title" class="form-control" formControlName="title">
+        <div *ngIf="recipeForm.get('title')?.invalid && recipeForm.get('title')?.touched" class="text-danger">
+          Title is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description"> <b>Description</b></label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+        <div *ngIf="recipeForm.get('description')?.invalid && recipeForm.get('description')?.touched" class="text-danger">
+          Description is required.
+        </div>
+      </div>
+  
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          More Options
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" (click)="onDelete()" *ngIf="editMode">Delete Recipe</a></li>
+        
+          <li><a class="dropdown-item" (click)="onClear()" *ngIf="!editMode"> clear</a></li>
+          <li><a class="dropdown-item" (click)="AddListIngradientToShoppingList()" *ngIf="this.recipe.ingradient.length > 0" >Add Ingredients To Shopping List</a></li>
+        </ul>
+      </div>
+      
+      <div class="row" *ngIf="Ingrads.length > 0">
+        <div formArrayName="ingradients" class="mt-3">
+          <hr>
+          <div *ngFor="let ingrad of Ingrads; let i = index" class="ingredient-item d-flex align-items-center">
+            <div [formGroupName]="i" class="d-flex align-items-center w-100">
+              <div class="form-group col-md-5">
+                <label for="name-{{i}}"><b>Name</b></label>
+                <input id="name-{{i}}" class="form-control" formControlName="name">
+                <div *ngIf="ingrad.get('name')?.invalid && ingrad.get('name')?.touched" class="text-danger">
+                  Name is required.
+                </div>
+              </div>
+              &nbsp; &nbsp;
+              <div class="form-group col-md-4">
+                <label for="amount-{{i}}"> <b>Amount</b></label>
+                <input id="amount-{{i}}" type="number" class="form-control" formControlName="amount">
+                <div *ngIf="ingrad.get('amount')?.invalid && ingrad.get('amount')?.touched" class="text-danger">
+                  Amount is required and must be greater than 0.
+                </div>
+              </div>
+              <div class="col-md-3 d-flex justify-content-end mt-3">
+                <button type="button" class="btn btn-danger ms-2" (click)="removeIngredient(i)">x</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-success add-ingredient-btn mt-2" (click)="addNewIngradident()">Add Ingredient</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row m-3 p-3">
+      <div class="col-md-12">
+        <button type="submit" class="btn btn-primary" [disabled]="recipeForm.invalid">{{editMode ?'edit':'add'}}</button>
+        <button type="button" class="btn btn-danger float-end" (click)="onCancel()">Cancel</button>
+      </div>
+    </div>
+  </form>
+</div>

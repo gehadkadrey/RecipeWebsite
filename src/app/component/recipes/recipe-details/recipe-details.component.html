@@ -1,17 +1,85 @@
-
-  <div class="card m-2 recipe-card">
+<div class="card m-2 recipe-card">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
     <img [src]="element.imagePath" class="card-img-top" alt="Recipe Image">
     <div class="card-body">
-      <h5 class="card-title">{{element.title}}</h5>
-      <p class="card-text">{{element.description}}</p>
-      <div *ngIf="element.ingradient?.length !== 0">
-        <hr>
-        <div *ngFor="let ingrad of element.ingradient" class="ingredient-item">
-          <span class="card-text ingredient-name">{{ingrad.name}}</span>
-          <span class="card-text ingredient-amount">{{ingrad.amount}}</span>
-          <button class="btn btn-success add-ingredient-btn mt-2" (click)="addToList(ingrad)">Add Ingredient To List</button>
-        </div>
-       
+      <label for="title"><b>title</b> </label>
+      <input id="title" class="form-control" formControlName="title">
+      <div *ngIf="recipeForm.get('title')?.invalid && recipeForm.get('title')?.touched" class="text-danger">
+        Title is required.
       </div>
+
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+        <div *ngIf="recipeForm.get('description')?.invalid && recipeForm.get('description')?.touched"
+          class="text-danger">
+          Description is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imagePath">Image URL</label>
+        <input id="imagePath" class="form-control" formControlName="imagePath">
+        <div *ngIf="recipeForm.get('imagePath')?.invalid && recipeForm.get('imagePath')?.touched" class="text-danger">
+          Image URL is required.
+        </div>
+      </div>
+
+      <!-- Dropdown list -->
+      <div class="dropdown mt-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          More Options
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#link1">edit Recipe</a></li>
+          <li><a class="dropdown-item" href="#link2">Delete Recipe</a></li>
+          <li><a class="dropdown-item" href="#link3"> To Shopping List</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div *ngIf="element.ingradient?.length !== 0" formArrayName="ingradients">
+          <hr>
+          <div *ngFor="let ingrad of element.ingradient ; let i =index" class="ingredient-item">
+            <div [formGroupName]="i">
+              <div class="form-group col-md-6">
+                <label for="name">Name</label>
+                <input id="name" class="form-control" formControlName="name">
+                <!-- <div *ngIf="ingredientCtrl.get('name')?.invalid && ingredientCtrl.get('name')?.touched" class="text-danger">
+              Name is required.
+            </div> -->
+              </div>
+
+              <div class="form-group col-md-4">
+                <label for="amount">Amount</label>
+                <input id="amount" type="number" class="form-control" formControlName="amount">
+                <!-- <div *ngIf="ingredientCtrl.get('amount')?.invalid && ingredientCtrl.get('amount')?.touched" class="text-danger">
+              Amount is required and must be greater than 0.
+            </div> -->
+              </div>
+
+              <div class="col-md-2">
+                <button class="btn btn-danger">x</button>
+              </div>
+            </div>
+            <button class="btn btn-success add-ingredient-btn mt-2" (click)="addToList(ingrad)">Add Ingredient To
+              List</button>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row mt-3">
+        <div class=" col-md-12">
+          <button class="btn btn-success float-end" (click)="addToList"> Add ingradient</button>
+        </div>
+      </div>
+
     </div>
-  </div>
+
+
+
+  </form>
+
+</div>

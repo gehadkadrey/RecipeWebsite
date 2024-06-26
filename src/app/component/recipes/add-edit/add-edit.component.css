@@ -1,0 +1,28 @@
+.card-img-top-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+  }
+  
+  .card-img-top {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .ingredient-item {
+    margin-bottom: 10px;
+  }
+  
+  .add-ingredient-btn {
+    width: 100%;
+  }
+  
+  .text-danger {
+    font-size: 0.875em;
+  }
+    
+  .recipe-card {
+    margin-top: 0;
+    margin-left: 2rem; /* This adds margin to the left. Adjust the value as needed */
+  }

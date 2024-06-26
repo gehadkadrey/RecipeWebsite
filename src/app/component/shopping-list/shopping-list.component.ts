@@ -17,7 +17,11 @@ export class ShoppingListComponent  implements OnInit{
   
   AddNewIngradient(element:ingradient)
   {
- // this.ingradientList.push(element);
  this.ingradirntService.addIngradient(element);
   }
+  OnGradientSelected(index:number)
+  {
+  this.ingradirntService.selectedIngradient.next(index);
+  }
+  
 }

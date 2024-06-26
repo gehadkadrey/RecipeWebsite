@@ -1,6 +1,7 @@
 <div class="row">
-<div  *ngFor=" let item of recipeList" class="col-md-6 mb-4"> 
-    <app-recipe-item  [element]="item"  (selectRecipe)="OnselectedElement($event)"></app-recipe-item>
+  
+<div  *ngFor=" let item of recipeList ; let i=index" class="col-md-6 mb-4"> 
+    <app-recipe-item  [element]="item"  (click)="onRecipeSelectedToEdit(i)" ></app-recipe-item>
 </div>
 
 </div>

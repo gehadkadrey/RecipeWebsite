@@ -6,7 +6,7 @@ export class RecipeModel{
 title!:string;
 description!:string;
  imagePath!:string;
- ingradient?:ingradient[]=[];
+ ingradient:ingradient[];
  constructor(title:string,description:string, imagePath:string,ingradient:ingradient[]){
     this.title=title;
     this.description=description;

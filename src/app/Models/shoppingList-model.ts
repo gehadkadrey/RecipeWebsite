@@ -1,8 +1,10 @@
-export class shoppingList-model
+export class shoppingListModel
 {
-
-constructor( name:string ,amount:number) {
-
-    
-}
+    name: string;
+    amount: number;
+  
+    constructor(name: string, amount: number) {
+      this.name = name;
+      this.amount = amount;
+    }
 }

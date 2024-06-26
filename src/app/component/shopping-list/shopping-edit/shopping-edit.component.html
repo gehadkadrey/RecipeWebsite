@@ -1,14 +1,29 @@
 <div class="last-page-container">
-  <div class="m-5 form-container">
+  <form class="m-5 form-container" [formGroup]="IngradForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name" class="form-label">Name</label>
-      <input id="name" type="text" class="form-control" #name>
+      <input
+       id="name" 
+      type="text"
+       class="form-control" 
+       formControlName="name" 
+      [ngClass]="{'is-invalid':getname?.invalid && (getname?.dirty || isSubmit ||getname?.touched) }">
+      <div *ngIf="getname?.invalid && (getname?.dirty || isSubmit ||getname?.touched)">
+        <small style="color: red;" *ngIf="getname?.errors?.['required']">name is required</small>
+      </div>
+      
     </div>
     <div class="form-group mb-3">
       <label for="amount" class="form-label">Amount</label>
-      <input id="amount" type="number" class="form-control" #amount>
+      <input id="amount" type="number" class="form-control" formControlName="amount" 
+      [ngClass]="{'is-invalid':getamount?.invalid && (getamount?.dirty || isSubmit ||getamount?.touched) }">
+      <div *ngIf="getamount?.invalid && (getamount?.dirty || isSubmit ||getamount?.touched)">
+        <small style="color: red;" *ngIf="getamount?.errors?.['required']">amount is required</small>
+      </div>
     </div>
 
-    <button class="btn btn-success m-2 add-btn" (click)="addItem()">Add</button>
-  </div>
+    <button  type="submit" class="btn btn-success m-2 add-btn" [disabled]="IngradForm.invalid">{{editMode? "edit": "add"}}</button>
+    <button  type="button" class="btn btn-danger m-2 add-btn" *ngIf="editMode" (click)="OnDelete()">delete</button>
+    <button  type="button" class="btn btn-warning m-2 add-btn" (click)="OnClear()">clear</button>
+  </form>
 </div>

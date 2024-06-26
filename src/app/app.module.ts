@@ -6,10 +6,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { RecipesComponent } from './component/recipes/recipes.component';
 import { RecipeListComponent } from './component/recipes/recipe-list/recipe-list.component';
-import { RecipeDetailsComponent } from './component/recipes/recipe-details/recipe-details.component';
 import { RecipeItemComponent } from './component/recipes/recipe-list/recipe-item/recipe-item.component';
 import { ShoppingListComponent } from './component/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './component/shopping-list/shopping-edit/shopping-edit.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AddEditComponent } from './component/recipes/add-edit/add-edit.component';
+import { RecipeDetailsComponent } from './component/recipes/recipe-details/recipe-details.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +20,18 @@ import { ShoppingEditComponent } from './component/shopping-list/shopping-edit/s
     HeaderComponent,
     RecipesComponent,
     RecipeListComponent,
-    RecipeDetailsComponent,
+   
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    AddEditComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     provideClientHydration()
